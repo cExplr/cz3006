@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<script type="text/javascript" src="netcentass2.js"></script>
+	<title>Order Form</title>
+	<link rel="stylesheet" type="text/css" href="netcentass2.css">
+</head>
+<body>
+	<form action="#">
+			
+			
+
+			<div class="wrapper">
+
+				<div class="usernameWrapper>
+					<label for="inputUsername">Username</label>
+					<input type="text" name="inputUsername" >
+				</div>
+
+
+				<!--This is for selection of the qty of fruits-->
+				<div class="quantityWrapper">
+					<div class="Apple">
+						<label class="labelfruits" for="noApples">Apple Qty [$0.75 each]</label>
+						<input id="AppleQtyText" type="text" name="noApples" value="0" onkeyup="checkQty('apple');">
+					</div>
+					<div class="Orange">
+						<label class="labelfruits" for="noOranges">Orange Qty [$0.59 each]</label>
+						<input id="OrangeQtyText" type="text" name="noOranges" value="0" onkeyup="checkQty('orange');">
+					</div>
+					
+					<div class="Banana">
+						<label class="labelfruits" for="noBananas">Banana Qty [$0.39 each]</label>
+						<input id="BananaQtyText" type="text" name="noBananas" value="0" onkeyup="checkQty('banana');">
+					</div>
+					
+				</div>
+				
+				<!--
+					This is to output price andit is not for any input
+					blur this so this value displayed cannot be edited
+				-->
+				<div class="paymentoptionsWrapper">
+
+					
+					<input id="outputPriceText" type="text" name="outputPrice">
+
+
+					<!--This is part for the payment method-->
+					<input type="radio" name="payment" value="VISA" checked="true">VISA>
+					<input type="radio" name="payment" value="Mastercard">	Mastercard
+					<input type="radio" name="payment" value="Discovery">Discovery
+				</div>
+
+				<div class="submitWrapper">
+					<div></div>
+					<input id="submitButton" type="button" value="Submit" name="submit" onclick="onSubmitButtonPressed();">
+					<div></div>
+				</div>
+			</div>
+			
+	</form>
+</body>
+</html>

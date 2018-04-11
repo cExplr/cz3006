@@ -1,0 +1,51 @@
+*{
+	background-color: #d3d3d3;
+	color:  #2f2f2f;
+}
+
+form{
+	margin: 10%;
+}
+.wrapper{
+	display: grid;
+	padding: 1em;
+	grid-template-columns: 1fr;
+	grid-gap: 1em;
+
+}
+
+.usernameWrapper{
+	background-color: #ffffff;
+	padding: 1em;
+}
+.quantityWrapper{
+	display: grid;
+	background-color: #ffffff;
+	padding:1em;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.Apple , .Banana , .Orange{
+	background-color: #ffffff;
+}
+
+.labelfruits{
+	background-color: #ffffff;
+}
+.paymentoptionsWrapper{
+	background-color: #ffffff;
+	padding: 1em;
+}
+
+.submitWrapper{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	margin: 20px;
+}
+
+#submitButton{
+	height: 3em;
+	color: #282828;
+	font-size: 1.5em;
+
+}
