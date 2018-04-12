@@ -8,14 +8,14 @@
 	<link rel="stylesheet" type="text/css" href="netcentass2.css">
 </head>
 <body>
-	<form action="#">
+	<form action="process.php" method="get">
 			
 			
-
+			<div class="titleOfPage">ORDER FORM</div>
 			<div class="wrapper">
 
-				<div class="usernameWrapper>
-					<label for="inputUsername">Username</label>
+				<div class="usernameWrapper">
+					<label class="labelfruits" for="inputUsername">Username<br></label>
 					<input type="text" name="inputUsername" >
 				</div>
 
@@ -23,17 +23,17 @@
 				<!--This is for selection of the qty of fruits-->
 				<div class="quantityWrapper">
 					<div class="Apple">
-						<label class="labelfruits" for="noApples">Apple Qty [$0.75 each]</label>
-						<input id="AppleQtyText" type="text" name="noApples" value="0" onkeyup="checkQty('apple');">
+						<label class="labelfruits" for="noApples">Apple Qty <br>[$0.75 each]</label>
+						<input id="AppleQtyText" type="text" name="noApples"  value="0" onkeyup="checkQty('apple');" onblur="checkIfNonZero('Apple');">
 					</div>
 					<div class="Orange">
-						<label class="labelfruits" for="noOranges">Orange Qty [$0.59 each]</label>
-						<input id="OrangeQtyText" type="text" name="noOranges" value="0" onkeyup="checkQty('orange');">
+						<label class="labelfruits" for="noOranges">Orange Qty <br>[$0.59 each]</label>
+						<input id="OrangeQtyText" type="text" name="noOranges" value="0" onkeyup="checkQty('orange');" onblur="checkIfNonZero('Orange');">
 					</div>
 					
 					<div class="Banana">
-						<label class="labelfruits" for="noBananas">Banana Qty [$0.39 each]</label>
-						<input id="BananaQtyText" type="text" name="noBananas" value="0" onkeyup="checkQty('banana');">
+						<label class="labelfruits" for="noBananas">Banana Qty <br>[$0.39 each]</label>
+						<input id="BananaQtyText" type="text" name="noBananas" value="0" onkeyup="checkQty('banana');" onblur="checkIfNonZero('Banana');">
 					</div>
 					
 				</div>
@@ -42,11 +42,18 @@
 					This is to output price andit is not for any input
 					blur this so this value displayed cannot be edited
 				-->
+
+				<div class="outputWrapper">
+					<div></div>
+					<div class="containerOutput">
+						<label class="labelfruits" for="outputPrice" >Message:</label>
+						<textarea id="outputPriceText" type="text" name="outputPrice" onfocus="blur();" cols="60" rows="20"> </textarea> 
+					</div>
+					<div></div>
+				</div>
+
+
 				<div class="paymentoptionsWrapper">
-
-					
-					<input id="outputPriceText" type="text" name="outputPrice">
-
 
 					<!--This is part for the payment method-->
 					<input type="radio" name="payment" value="VISA" checked="true">VISA>
@@ -56,7 +63,7 @@
 
 				<div class="submitWrapper">
 					<div></div>
-					<input id="submitButton" type="button" value="Submit" name="submit" onclick="onSubmitButtonPressed();">
+					<input id="submitButton" type="submit" value="Submit" name="submit" onclick="onSubmitButtonPressed();">
 					<div></div>
 				</div>
 			</div>

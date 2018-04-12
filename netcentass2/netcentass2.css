@@ -3,8 +3,15 @@
 	color:  #2f2f2f;
 }
 
+.titleOfPage{
+	font-size: 5em;
+	text-align: center;
+	color: #237537
+}
 form{
-	margin: 10%;
+	margin-left:10%;
+	margin-right: 10%;
+	margin-top: 3%;
 }
 .wrapper{
 	display: grid;
@@ -17,12 +24,16 @@ form{
 .usernameWrapper{
 	background-color: #ffffff;
 	padding: 1em;
+	margin-left: auto;
+	font-size: 1.3em;
+	margin-right: auto;
 }
 .quantityWrapper{
 	display: grid;
 	background-color: #ffffff;
 	padding:1em;
 	grid-template-columns: 1fr 1fr 1fr;
+	font-size: 1.7em;
 }
 
 .Apple , .Banana , .Orange{
@@ -32,9 +43,33 @@ form{
 .labelfruits{
 	background-color: #ffffff;
 }
+.outputWrapper{
+	background-color: #ffffff;
+	padding: 1em;
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	
+}
+
+.outputWrapper>div{  /*Select all div where outputwrapper is the parent*/
+	background-color: #ffffff;
+}
+
+.containerOutput{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#outputPriceText{
+	font-size: 1.5em;
+	height: 8em;
+}
+
 .paymentoptionsWrapper{
 	background-color: #ffffff;
 	padding: 1em;
+	font-size: 1.3em;
+
 }
 
 .submitWrapper{
