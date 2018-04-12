@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="netcentass2.css">
 </head>
 <body>
-	<form action="process.php" method="get">
+	<form action="process.php" method="post">
 			
 			
 			<div class="titleOfPage">ORDER FORM</div>
@@ -56,9 +56,9 @@
 				<div class="paymentoptionsWrapper">
 
 					<!--This is part for the payment method-->
-					<input type="radio" name="payment" value="VISA" checked="true">VISA>
-					<input type="radio" name="payment" value="Mastercard">	Mastercard
-					<input type="radio" name="payment" value="Discovery">Discovery
+					<input id="modeV" type="radio" name="payment" value="VISA" checked="true">VISA>
+					<input id="modeM" type="radio" name="payment" value="Mastercard">	Mastercard
+					<input id="modeD" type="radio" name="payment" value="Discovery">Discovery
 				</div>
 
 				<div class="submitWrapper">

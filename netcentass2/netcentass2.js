@@ -47,7 +47,8 @@ function checkIfNonZero(fruit){
 
 
 function checkQty(fruit){
-	
+	var submitbutton = document.getElementById("submitButton");
+
 	var qtyB = document.getElementById("BananaQtyText").value;
 
 	var qtyO = document.getElementById("OrangeQtyText").value;
@@ -58,14 +59,17 @@ function checkQty(fruit){
 	var okO = qtyO.search(/^[0-9]*$/);
 	var okA = qtyA.search(/^[0-9]*$/);
 	if (okB != 0 || qtyB < 0 || okA != 0 || qtyA < 0 ||okO != 0 || qtyO < 0){
+		submitbutton.disabled = true;
 		output("");
-		output("Quantity field only accepts numbers");
+		output("NaN\n\nQuantity field only accepts digits");
 	}else
 	if (qtyA == 0 && qtyB == 0 && qtyO ==0){
 		output("");
+		submitbutton.disabled = false;
 	}
 	else{
 		displayTotalCost(qtyA, qtyB, qtyO);
+		submitbutton.disabled = false;
 	}
 	
 }
@@ -86,6 +90,7 @@ function output(outputvalue){
 
 function onSubmitButtonPressed(){
 	var totalQty=0;
+	var paymentMode="";
 	/*Get the quantities from textboxes*/
 	bQtyTextBox = document.getElementById("BananaQtyText");
 	oQtyTextBox = document.getElementById("OrangeQtyText");
@@ -96,10 +101,30 @@ function onSubmitButtonPressed(){
 		alert("There are no fruits being added!");
 	}
 	else{
+		var payBy = "";
+		var visa = document.getElementById("modeV");
+		var discovery = document.getElementById("modeD");
+		var mastercard = document.getElementById("modeM");
+		if (visa.checked){
+				payBy = visa.value;
+		}
+		else if(discovery.checked){
+			payBy=discovery.value;
+		}
+		else{
+			payBy = mastercard.value;
+		}
+
 		totalCost = aQtyTextBox.value*0.75+bQtyTextBox.value*0.39+oQtyTextBox.value*0.59;
-		var outputMessage = "No of Apples : " + aQtyTextBox.value+"\nNo of Oranges : " + oQtyTextBox.value+"\nNo of Bananas : " + bQtyTextBox.value+"\nTotal Cost of Fruits : s$" + totalCost.toFixed(2)+"\n";
+		var outputMessage = "No of Apples : " + aQtyTextBox.value+"\nNo of Oranges : " + oQtyTextBox.value+"\nNo of Bananas : " + bQtyTextBox.value+"\nTotal Cost of Fruits : s$" + totalCost.toFixed(2)+"\n\n Payment By : "+ payBy;
+
+		confirm("Confirm \n\n"+outputMessage);
+
+	
 		
-		confirm("Confirm ? \n\n"+outputMessage);
+		
 	}
 	
+
+
 }
