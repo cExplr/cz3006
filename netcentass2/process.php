@@ -11,6 +11,7 @@
     font-family: 'Bree Serif', serif;
 
 -->
+<script type="text/javascript" src="netcentass2.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Bree+Serif|Gamja+Flower" rel="stylesheet"> 
 	<meta charset="UTF-8">
 	<title>Form Submitted</title>
@@ -53,6 +54,7 @@
 			$qtyO= $_POST["noOranges"] ;
 			$qtyB=$_POST["noBananas"];
 			$qtyA=$_POST["noApples"];
+			$username=$_POST["inputUsername"];
 
 			//Calculate total cost of each fruit category
 			$totalCostOrange = ($qtyO * 0.59);
@@ -105,7 +107,7 @@
 			<td><?php printf("$ %.2f",$totalCostOfFruits) ?></td>
 		</tr>
 	</table>
-
+	<div style="font-size : 1.5em;text-align:center; ">Dear <?php printf("%s",$username) ?>,<br> We Hope to serve you again soon! Enjoy your Fruits!</div>
 
 <?php 
 
